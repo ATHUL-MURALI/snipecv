@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import LoadingScreen from './pages/loadingScreen/LoadingScreen';
 
 function App() {
   const [val, setVal] = useState(0);
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,7 +15,7 @@ function App() {
 
   if (loading){
     return (
-      <div>Loading</div>
+      <LoadingScreen/>
     )
   }
   return (
